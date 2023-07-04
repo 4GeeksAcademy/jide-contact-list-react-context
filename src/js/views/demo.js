@@ -30,9 +30,7 @@ export const Demo = () => {
 			<div className="save">
 				<button type="submit" className="btn btn-primary w-100">save</button>
 			</div>
-			<Link to="/">
-				<a href="#" className="card-link">or get back to contacts</a>
-			</Link>
+			<Link to="/">or get back to contacts</Link>
 		</div>
 	);
 };
