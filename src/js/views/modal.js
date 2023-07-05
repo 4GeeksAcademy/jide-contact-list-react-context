@@ -6,9 +6,10 @@ import { Context } from "../store/appContext";
 import "../../styles/demo.css";
 
 export const Modal = () => {
+    const { store, actions } = useContext(Context);
 	return (
 		<div className="container">
-			<div className="modal" tabindex="-1">
+			<div className="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">
