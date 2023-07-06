@@ -3,14 +3,18 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			demo: [
 				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
+					full_name: "Dave Bradley",
+					email: "dave@gmail.com",
+					agenda_slug: "my_super_agenda",
+					address: "47568 NW 34ST, 33434 FL, USA",
+					phone: "7864445566"
 				},
 				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
+					full_name: "Dave Bradley",
+					email: "dave@gmail.com",
+					agenda_slug: "my_super_agenda",
+					address: "47568 NW 34ST, 33434 FL, USA",
+					phone: "7864445566"
 				}
 			]
 		},
@@ -37,8 +41,31 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
-			}
-		}
+			},
+			addNewListitem: (title, background, initial) => {
+				const store = getStore();
+
+				const newItem = {
+					title,
+					background,
+					initial,
+				};
+
+				const updateDemoList = [...store.demo, newItem];
+
+				setStore({ demo: updatedDemoList });
+			},
+			deleteListItem: (id) => {
+				const store = getStore();
+
+				const filteredDemos = store.demo.filter((item) => item.id != id);
+
+				setStore({ demo: filteredDemos });
+			},
+			setDemoList: (demolist) => {
+				setStore({ demo: demoList });
+			},
+		},
 	};
 };
 
